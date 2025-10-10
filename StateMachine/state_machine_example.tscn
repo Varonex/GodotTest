@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5kw415x8y5xh"]
+
+[ext_resource type="Script" uid="uid://cx1ve2hm3h7vw" path="res://StateMachine/Player/player.gd" id="1_3plgt"]
+[ext_resource type="Script" uid="uid://ddutd8dmq84l1" path="res://StateMachine/state_machine.gd" id="2_efjib"]
+[ext_resource type="Script" uid="uid://4jvpirgacl5h" path="res://StateMachine/Player/player_idle_state.gd" id="3_601gh"]
+[ext_resource type="Script" uid="uid://84m75db1dbgs" path="res://StateMachine/state_transition.gd" id="4_jgog0"]
+[ext_resource type="Script" uid="uid://ctbm5u4dvp2le" path="res://StateMachine/Player/speed_transition.gd" id="5_eejg4"]
+[ext_resource type="Script" uid="uid://bt07kp41hqbub" path="res://StateMachine/Player/player_walk_state.gd" id="6_qxyo8"]
+
+[sub_resource type="Resource" id="Resource_tg2xe"]
+script = ExtResource("5_eejg4")
+threshold = 4.0
+target_state = NodePath("../PlayerWalkState")
+metadata/_custom_type_script = "uid://ctbm5u4dvp2le"
+
+[sub_resource type="Resource" id="Resource_3plgt"]
+script = ExtResource("5_eejg4")
+threshold = 4.0
+above = false
+target_state = NodePath("../PlayerIdleState")
+metadata/_custom_type_script = "uid://ctbm5u4dvp2le"
+
+[node name="Player" type="Node"]
+script = ExtResource("1_3plgt")
+metadata/_custom_type_script = "uid://cx1ve2hm3h7vw"
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
+script = ExtResource("2_efjib")
+state = NodePath("PlayerIdleState")
+is_active = true
+metadata/_custom_type_script = "uid://ddutd8dmq84l1"
+
+[node name="PlayerIdleState" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("3_601gh")
+player = NodePath("../..")
+out_transitions = Array[ExtResource("4_jgog0")]([SubResource("Resource_tg2xe")])
+metadata/_custom_type_script = "uid://4jvpirgacl5h"
+
+[node name="PlayerWalkState" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("6_qxyo8")
+player = NodePath("../..")
+out_transitions = Array[ExtResource("4_jgog0")]([SubResource("Resource_3plgt")])
+metadata/_custom_type_script = "uid://bt07kp41hqbub"
