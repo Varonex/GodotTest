@@ -7,5 +7,5 @@ func can_transition(context: Dictionary[String, Variant]) -> bool:
 	if above:
 		return context["speed"] >= threshold
 		
-	return context["speed"] <= threshold
+	return context["speed"] < threshold
 	

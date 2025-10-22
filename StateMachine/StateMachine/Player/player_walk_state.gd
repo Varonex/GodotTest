@@ -6,8 +6,8 @@ func _on_enter() -> void:
 func _on_exit() -> void:
 	print("Exit walk")
 	
-func _state_process(delta: float) -> void:
+func _state_process(_delta: float) -> void:
 	pass
 	
-func _state_physics_process(delta: float) -> void:
+func _state_physics_process(_delta: float) -> void:
 	pass

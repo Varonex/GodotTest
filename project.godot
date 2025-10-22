@@ -10,7 +10,6 @@ config_version=5
 
 [application]
 
-config/name="GodotTutorials"
-run/main_scene="uid://c5kw415x8y5xh"
+config/name="GodotTest"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
