@@ -74,7 +74,7 @@ public partial class StateMachine : Node
             
             _state = newState;
             
-            EmitSignalOnStateChanged(newState);
+            EmitSignal(SignalName.OnStateChanged, newState);
         }
     }
 }

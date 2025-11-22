@@ -49,7 +49,7 @@ public abstract partial class State : Node
     public void OnEnterState()
     {
         _OnEnterState();
-        EmitSignalEnterState();
+        EmitSignal(SignalName.EnterState);
     }
 
     // Method to override that adds context to the enter state method.
@@ -59,7 +59,7 @@ public abstract partial class State : Node
     public void OnExitState()
     {
         _OnExitState();
-        EmitSignalExitState();
+        EmitSignal(SignalName.ExitState);
     }
 
     // Method to override that adds context to the exit state method.
