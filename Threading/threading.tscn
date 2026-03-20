@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cibvrlgo8dhxo"]
+
+[ext_resource type="Script" uid="uid://cgj017a02yi1s" path="res://Threading/Threading/threading_context.gd" id="1_ymrsl"]
+
+[node name="Threading" type="Node" unique_id=1131551858]
+script = ExtResource("1_ymrsl")
+n = 5000
+multiplicator = 2

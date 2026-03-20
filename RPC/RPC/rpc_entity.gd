@@ -38,9 +38,11 @@ func output(msg: String) -> void:
 	
 	print("[%s - %d]: %s" % [prefix, multiplayer.get_unique_id(), msg])
 
+@rpc("any_peer", "call_local", "unreliable_ordered")
 func rpc_all() -> void:
 	output("Can be called by anyone (id = %d)" % multiplayer.get_remote_sender_id())
 
+@rpc("authority", "call_local", "unreliable_ordered")
 func rpc_server() -> void:
 	output("Can only be invoked by the server (id = %d = 1)" % multiplayer.get_remote_sender_id())
 

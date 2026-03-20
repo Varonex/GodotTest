@@ -19,10 +19,15 @@ run/main_scene="uid://binvof164yh41"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://cc76fsdx1go5q"
+
 [file_customization]
 
 folder_colors={
 "res://BehaviorTree/": "red",
 "res://RPC/": "orange",
-"res://StateMachine/": "yellow"
+"res://StateMachine/": "yellow",
+"res://Threading/": "green"
 }

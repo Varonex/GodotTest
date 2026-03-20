@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bcl0ff71kpt5y"]
+
+[ext_resource type="Script" uid="uid://dgw8u4teqjys5" path="res://Threading/Threading/worker_thread_contex.gd" id="1_xkxkk"]
+
+[node name="WorkerThreadPool" type="Node" unique_id=237394694]
+script = ExtResource("1_xkxkk")
+n = 5000
+multiplicator = 2

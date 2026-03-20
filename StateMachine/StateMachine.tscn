@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://c5kw415x8y5xh"]
 
-[ext_resource type="Script" uid="uid://ooohepmbu17x" path="res://StateMachine/StateMachine/Player/StateMachinePlayer.gd" id="1_toxlk"]
-[ext_resource type="Script" uid="uid://bvwpibkp7nc26" path="res://StateMachine/StateMachine/StateMachine.gd" id="2_yuu6g"]
-[ext_resource type="Script" uid="uid://cxex6r7cmx5rf" path="res://StateMachine/StateMachine/Player/PlayerIdleState.gd" id="3_3dhmu"]
-[ext_resource type="Script" uid="uid://fl7bh7ibml3v" path="res://StateMachine/StateMachine/StateTransition.gd" id="4_3gwe5"]
-[ext_resource type="Script" uid="uid://b06j7rhjnjb6f" path="res://StateMachine/StateMachine/Player/SpeedTransition.gd" id="5_csrbf"]
-[ext_resource type="Script" uid="uid://b8wtaf5xmdfsh" path="res://StateMachine/StateMachine/Player/PlayerWalkState.gd" id="6_jjgur"]
+[ext_resource type="Script" uid="uid://ooohepmbu17x" path="res://StateMachine/StateMachine/Player/state_machine_player.gd" id="1_toxlk"]
+[ext_resource type="Script" uid="uid://bvwpibkp7nc26" path="res://StateMachine/StateMachine/state_machine.gd" id="2_yuu6g"]
+[ext_resource type="Script" uid="uid://cxex6r7cmx5rf" path="res://StateMachine/StateMachine/Player/player_idle_state.gd" id="3_3dhmu"]
+[ext_resource type="Script" uid="uid://fl7bh7ibml3v" path="res://StateMachine/StateMachine/state_transition.gd" id="4_3gwe5"]
+[ext_resource type="Script" uid="uid://b06j7rhjnjb6f" path="res://StateMachine/StateMachine/Player/speed_transition.gd" id="5_csrbf"]
+[ext_resource type="Script" uid="uid://b8wtaf5xmdfsh" path="res://StateMachine/StateMachine/Player/player_walk_state.gd" id="6_jjgur"]
 
 [sub_resource type="Resource" id="Resource_xjfqq"]
 script = ExtResource("5_csrbf")
