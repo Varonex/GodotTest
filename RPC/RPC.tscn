@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://binvof164yh41"]
+[gd_scene format=3 uid="uid://binvof164yh41"]
 
-[ext_resource type="Script" uid="uid://cy7b3nlby43jb" path="res://RPC/RPC/RPCEntity.cs" id="1_xrjx6"]
+[ext_resource type="Script" uid="uid://dacxyr17sinlo" path="res://RPC/RPC/RPCEntity.gd" id="1_6ffrm"]
 
-[node name="Entity" type="Node" node_paths=PackedStringArray("_timer")]
-script = ExtResource("1_xrjx6")
+[node name="Entity" type="Node" unique_id=2110473880 node_paths=PackedStringArray("_timer")]
+script = ExtResource("1_6ffrm")
 _timer = NodePath("Call")
 
-[node name="Call" type="Timer" parent="."]
+[node name="Call" type="Timer" parent="." unique_id=440240697]
 wait_time = 5.0
 autostart = true

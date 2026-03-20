@@ -1,39 +1,39 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5kw415x8y5xh"]
+[gd_scene format=3 uid="uid://c5kw415x8y5xh"]
 
-[ext_resource type="Script" uid="uid://dii7bw8piafm3" path="res://StateMachine/StateMachine/Player/Player.cs" id="1_3w10y"]
-[ext_resource type="Script" uid="uid://n0qvoloknygm" path="res://StateMachine/StateMachine/StateMachine.cs" id="2_eombq"]
-[ext_resource type="Script" uid="uid://d03q71s3mvxeb" path="res://StateMachine/StateMachine/Player/PlayerIdleState.cs" id="3_u668a"]
-[ext_resource type="Script" uid="uid://0w7w2jxtrdbj" path="res://StateMachine/StateMachine/Player/SpeedTransition.cs" id="4_eombq"]
-[ext_resource type="Script" uid="uid://c34phepfmqpgt" path="res://StateMachine/StateMachine/Player/PlayerWalkState.cs" id="4_m7mcl"]
+[ext_resource type="Script" uid="uid://ooohepmbu17x" path="res://StateMachine/StateMachine/Player/StateMachinePlayer.gd" id="1_toxlk"]
+[ext_resource type="Script" uid="uid://bvwpibkp7nc26" path="res://StateMachine/StateMachine/StateMachine.gd" id="2_yuu6g"]
+[ext_resource type="Script" uid="uid://cxex6r7cmx5rf" path="res://StateMachine/StateMachine/Player/PlayerIdleState.gd" id="3_3dhmu"]
+[ext_resource type="Script" uid="uid://fl7bh7ibml3v" path="res://StateMachine/StateMachine/StateTransition.gd" id="4_3gwe5"]
+[ext_resource type="Script" uid="uid://b06j7rhjnjb6f" path="res://StateMachine/StateMachine/Player/SpeedTransition.gd" id="5_csrbf"]
+[ext_resource type="Script" uid="uid://b8wtaf5xmdfsh" path="res://StateMachine/StateMachine/Player/PlayerWalkState.gd" id="6_jjgur"]
 
-[sub_resource type="Resource" id="Resource_u668a"]
-script = ExtResource("4_eombq")
+[sub_resource type="Resource" id="Resource_xjfqq"]
+script = ExtResource("5_csrbf")
 _threshold = 4.0
-TargetState = NodePath("../PlayerWalkState")
-metadata/_custom_type_script = "uid://0w7w2jxtrdbj"
+target_state = NodePath("../PlayerWalkState")
+metadata/_custom_type_script = "uid://b06j7rhjnjb6f"
 
-[sub_resource type="Resource" id="Resource_eombq"]
-script = ExtResource("4_eombq")
+[sub_resource type="Resource" id="Resource_w7fys"]
+script = ExtResource("5_csrbf")
 _threshold = 4.0
 _above = false
-TargetState = NodePath("../PlayerIdleState")
-metadata/_custom_type_script = "uid://0w7w2jxtrdbj"
+target_state = NodePath("../PlayerIdleState")
+metadata/_custom_type_script = "uid://b06j7rhjnjb6f"
 
-[node name="Player" type="Node"]
-script = ExtResource("1_3w10y")
-Speed = 3.0
+[node name="Player" type="Node" unique_id=393226091]
+script = ExtResource("1_toxlk")
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("_state")]
-script = ExtResource("2_eombq")
+[node name="StateMachine" type="Node" parent="." unique_id=450330183 node_paths=PackedStringArray("_state")]
+script = ExtResource("2_yuu6g")
 _state = NodePath("PlayerIdleState")
-IsActive = true
+is_active = true
 
-[node name="PlayerIdleState" type="Node" parent="StateMachine" node_paths=PackedStringArray("_player")]
-script = ExtResource("3_u668a")
+[node name="PlayerIdleState" type="Node" parent="StateMachine" unique_id=2075401228 node_paths=PackedStringArray("_player")]
+script = ExtResource("3_3dhmu")
 _player = NodePath("../..")
-_outTransitions = [SubResource("Resource_u668a")]
+_out_transitions = Array[ExtResource("4_3gwe5")]([SubResource("Resource_xjfqq")])
 
-[node name="PlayerWalkState" type="Node" parent="StateMachine" node_paths=PackedStringArray("_player")]
-script = ExtResource("4_m7mcl")
+[node name="PlayerWalkState" type="Node" parent="StateMachine" unique_id=309301471 node_paths=PackedStringArray("_player")]
+script = ExtResource("6_jjgur")
 _player = NodePath("../..")
-_outTransitions = [SubResource("Resource_eombq")]
+_out_transitions = Array[ExtResource("4_3gwe5")]([SubResource("Resource_w7fys")])
