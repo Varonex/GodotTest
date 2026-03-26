@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://47l03a0tsp0s"]
+
+[ext_resource type="Script" uid="uid://bdrak5fybwhvq" path="res://File_Dir_Tool/File_Dir_Tool/file_dir_tool.gd" id="1_p80wl"]
+
+[node name="File" type="Node" unique_id=914172982]
+script = ExtResource("1_p80wl")
+content = "Hello hi hi hello
+Trixy t'es une grosse salope wtf connasse de merde salope !!!"
+available_files = PackedStringArray("test_file.txt", "trixy.abc", "bonsoir.sieojf")
+file_name = "bonsoir.sieojf"

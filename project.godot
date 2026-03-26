@@ -15,7 +15,6 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="GodotTest"
-run/main_scene="uid://binvof164yh41"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -27,7 +26,10 @@ buses/default_bus_layout="uid://cc76fsdx1go5q"
 
 folder_colors={
 "res://BehaviorTree/": "red",
+"res://File_Dir_Tool/": "teal",
 "res://RPC/": "orange",
+"res://Shading/": "blue",
 "res://StateMachine/": "yellow",
-"res://Threading/": "green"
+"res://Threading/": "green",
+"res://ToolScriptTest/": "purple"
 }
