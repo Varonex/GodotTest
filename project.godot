@@ -28,6 +28,7 @@ folder_colors={
 "res://BehaviorTree/": "red",
 "res://File_Dir_Tool/": "teal",
 "res://RPC/": "orange",
+"res://Reflection/": "pink",
 "res://Shading/": "blue",
 "res://StateMachine/": "yellow",
 "res://Threading/": "green",
