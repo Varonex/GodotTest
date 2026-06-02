@@ -26,11 +26,13 @@ buses/default_bus_layout="uid://cc76fsdx1go5q"
 
 folder_colors={
 "res://BehaviorTree/": "red",
+"res://Exporting/": "yellow",
 "res://File_Dir_Tool/": "teal",
 "res://RPC/": "orange",
 "res://Reflection/": "pink",
 "res://Shading/": "blue",
 "res://StateMachine/": "yellow",
 "res://Threading/": "green",
-"res://ToolScriptTest/": "purple"
+"res://ToolScriptTest/": "purple",
+"res://TypingIssueWithDS/": "gray"
 }

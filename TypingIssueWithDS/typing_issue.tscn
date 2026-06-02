@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bi6fb3m5sr12u"]
+
+[ext_resource type="Script" uid="uid://b3p78cdgd5l1l" path="res://TypingIssueWithDS/TypingIssue/typing_issue.gd" id="1_jmcpn"]
+
+[node name="TemplateScene" type="Node" unique_id=493264610]
+script = ExtResource("1_jmcpn")
