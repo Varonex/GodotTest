@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://g835aocqsi45"]
+
+[ext_resource type="Script" uid="uid://dqto3yi18w8kr" path="res://3DPlayground/3d_playground_main.gd" id="1_h3667"]
+[ext_resource type="PackedScene" uid="uid://d1pwdwxfh81px" path="res://3DPlayground/hud.tscn" id="2_w4lab"]
+[ext_resource type="Script" uid="uid://ia2mtyp2q8ey" path="res://test_entry.gd" id="3_erhk8"]
+[ext_resource type="Script" uid="uid://bj5mynyad656b" path="res://3DPlayground/script/custom_camera3d.gd" id="3_w4lab"]
+[ext_resource type="PackedScene" uid="uid://bbtdtm5oullmf" path="res://3DPlayground/scene/test_entry/falling_balls.tscn" id="4_ywqim"]
+[ext_resource type="PackedScene" uid="uid://cfa65tj5tljj8" path="res://3DPlayground/scene/test_entry/falling_pills.tscn" id="5_v5ujr"]
+[ext_resource type="PackedScene" uid="uid://dp5xcg5lgmovu" path="res://3DPlayground/scene/test_entry/music.tscn" id="6_h275o"]
+
+[sub_resource type="Resource" id="Resource_ywqim"]
+script = ExtResource("3_erhk8")
+scene = ExtResource("4_ywqim")
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
+[sub_resource type="Resource" id="Resource_h275o"]
+script = ExtResource("3_erhk8")
+scene = ExtResource("5_v5ujr")
+enabled = false
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
+[sub_resource type="Resource" id="Resource_bm471"]
+script = ExtResource("3_erhk8")
+scene = ExtResource("6_h275o")
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h3667"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_w4lab"]
+sky_material = SubResource("ProceduralSkyMaterial_h3667")
+
+[sub_resource type="Environment" id="Environment_erhk8"]
+background_mode = 2
+sky = SubResource("Sky_w4lab")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tvf64"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvf64"]
+albedo_color = Color(0.10051107, 0.16976064, 0.070846535, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8tqwl"]
+material = SubResource("StandardMaterial3D_tvf64")
+size = Vector2(5000, 5000)
+
+[node name="3DPlayground" type="Node3D" unique_id=2058059926]
+script = ExtResource("1_h3667")
+hud_scene = ExtResource("2_w4lab")
+test_scenes = Array[ExtResource("3_erhk8")]([SubResource("Resource_ywqim"), SubResource("Resource_h275o"), SubResource("Resource_bm471")])
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1685786785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+current = true
+script = ExtResource("3_w4lab")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D" unique_id=289264113]
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=520710405]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1061570496]
+environment = SubResource("Environment_erhk8")
+
+[node name="Baseplate" type="StaticBody3D" parent="." unique_id=1490898212]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Baseplate" unique_id=41122126]
+shape = SubResource("WorldBoundaryShape3D_tvf64")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Baseplate" unique_id=1242245660]
+mesh = SubResource("PlaneMesh_8tqwl")
+metadata/_edit_lock_ = true

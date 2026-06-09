@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cfa65tj5tljj8"]
+
+[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://3DPlayground/scene/test_entry.tscn" id="1_kt3cp"]
+[ext_resource type="PackedScene" uid="uid://chkkh42uheanr" path="res://3DPlayground/scene/individual/wedge.tscn" id="2_w4ajt"]
+[ext_resource type="Script" uid="uid://bw4j0resbytvj" path="res://3DPlayground/script/spawner3d.gd" id="3_5f5dg"]
+[ext_resource type="PackedScene" uid="uid://bkaf3b18hufq3" path="res://3DPlayground/scene/individual/pill.tscn" id="4_kt3cp"]
+
+[node name="TestEntry" unique_id=1729569509 instance=ExtResource("1_kt3cp")]
+
+[node name="Wedge" parent="." index="2" unique_id=1094164911 instance=ExtResource("2_w4ajt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6965641, 1.5999997, 0)
+
+[node name="Wedge2" parent="." index="3" unique_id=818675492 instance=ExtResource("2_w4ajt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.8531389, 5.255645, 0)
+
+[node name="Spawner3d" type="Marker3D" parent="." index="4" unique_id=191343630 node_paths=PackedStringArray("container")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0561736, 8.679903, 0)
+script = ExtResource("3_5f5dg")
+container = NodePath(".")
+blueprint = ExtResource("4_kt3cp")
+wait_time = 0.1
+kill_time = 20.0
+spawn_range = Vector3(0, 3, 5)
+metadata/_custom_type_script = "uid://bw4j0resbytvj"

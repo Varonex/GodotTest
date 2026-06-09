@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://bbtdtm5oullmf"]
+
+[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://3DPlayground/scene/test_entry.tscn" id="1_fs5rt"]
+[ext_resource type="PackedScene" uid="uid://chkkh42uheanr" path="res://3DPlayground/scene/individual/wedge.tscn" id="2_jvi2t"]
+[ext_resource type="Script" uid="uid://bw4j0resbytvj" path="res://3DPlayground/script/spawner3d.gd" id="3_jvi2t"]
+[ext_resource type="PackedScene" uid="uid://btfdmak0tyauu" path="res://3DPlayground/scene/individual/cube.tscn" id="3_wlop2"]
+[ext_resource type="PackedScene" uid="uid://jpraesdn3rd2" path="res://3DPlayground/scene/individual/ball.tscn" id="4_l4i0x"]
+[ext_resource type="Script" uid="uid://b2vxjp5klesqr" path="res://3DPlayground/script/teleporter3d.gd" id="6_xtq48"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l4i0x"]
+size = Vector3(0.35, 0.35, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l4i0x"]
+size = Vector3(0.35, 0.35, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlop2"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.42352942)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+backlight = Color(1, 0, 0, 1)
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wlop2"]
+material = SubResource("StandardMaterial3D_wlop2")
+size = Vector3(1.7, 0.13, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xtq48"]
+size = Vector3(1.7, 0.13, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xtq48"]
+transparency = 1
+albedo_color = Color(0.38431373, 1, 0, 0.42352942)
+emission_enabled = true
+emission = Color(0.38431373, 1, 0, 1)
+emission_energy_multiplier = 16.0
+backlight = Color(1, 0, 0, 1)
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t4llk"]
+material = SubResource("StandardMaterial3D_xtq48")
+size = Vector3(1.7, 0.13, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xtq48"]
+material = SubResource("StandardMaterial3D_wlop2")
+size = Vector3(1.7, 0.13, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t4llk"]
+size = Vector3(1.7, 0.13, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_emt5b"]
+material = SubResource("StandardMaterial3D_wlop2")
+size = Vector3(0.5, 0.13, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3yyv"]
+size = Vector3(0.5, 0.13, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sfmhv"]
+material = SubResource("StandardMaterial3D_xtq48")
+size = Vector3(1.7, 0.13, 10)
+
+[node name="TestEntry" unique_id=1729569509 instance=ExtResource("1_fs5rt")]
+
+[node name="Wedge" parent="." index="2" unique_id=1094164911 instance=ExtResource("2_jvi2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6965641, 1.5999997, 0)
+constant_linear_velocity = Vector3(5, 0, 0)
+
+[node name="Cube" parent="." index="3" unique_id=271874167 instance=ExtResource("3_wlop2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4198265, 3.7591774, 0)
+constant_linear_velocity = Vector3(-15, 0, 0)
+
+[node name="Shredder" type="RigidBody3D" parent="." index="4" unique_id=877232211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.482094, 0.30721653, 0)
+collision_mask = 0
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+constant_torque = Vector3(0, 0.25, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Shredder" index="0" unique_id=707946393]
+mesh = SubResource("BoxMesh_l4i0x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shredder" index="1" unique_id=2040157621]
+shape = SubResource("BoxShape3D_l4i0x")
+
+[node name="Shredder2" type="RigidBody3D" parent="." index="5" unique_id=297360131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.482094, 0.30721653, 3)
+collision_mask = 0
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+constant_torque = Vector3(0, 0.25, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Shredder2" index="0" unique_id=818861152]
+mesh = SubResource("BoxMesh_l4i0x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shredder2" index="1" unique_id=426721101]
+shape = SubResource("BoxShape3D_l4i0x")
+
+[node name="Shredder3" type="RigidBody3D" parent="." index="6" unique_id=597381473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.482094, 0.30721653, -3)
+collision_mask = 0
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+constant_torque = Vector3(0, 0.25, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Shredder3" index="0" unique_id=1416650063]
+mesh = SubResource("BoxMesh_l4i0x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shredder3" index="1" unique_id=1136254529]
+shape = SubResource("BoxShape3D_l4i0x")
+
+[node name="Spawner3d" type="Marker3D" parent="." index="7" unique_id=191343630 node_paths=PackedStringArray("container")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7453463, 8.679903, 0)
+script = ExtResource("3_jvi2t")
+container = NodePath(".")
+blueprint = ExtResource("4_l4i0x")
+wait_time = 0.05
+kill_time = 30.0
+spawn_range = Vector3(0, 3, 5)
+metadata/_custom_type_script = "uid://bw4j0resbytvj"
+
+[node name="Teleport1" type="Node3D" parent="." index="8" unique_id=1519692367]
+
+[node name="In" type="Area3D" parent="Teleport1" index="0" unique_id=656437071 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1030416, 0.16499978, 0)
+script = ExtResource("6_xtq48")
+target = NodePath("../Out")
+keep_z = true
+whitelist_groups = Array[StringName]([&"ball"])
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Teleport1/In" index="0" unique_id=1721227912]
+mesh = SubResource("BoxMesh_wlop2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport1/In" index="1" unique_id=608922108]
+shape = SubResource("BoxShape3D_xtq48")
+
+[node name="Out" type="MeshInstance3D" parent="Teleport1" index="1" unique_id=632399285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.411205, 3.5723126, 0)
+mesh = SubResource("BoxMesh_t4llk")
+skeleton = NodePath("../..")
+
+[node name="Teleport2" type="Node3D" parent="." index="9" unique_id=1922031444]
+
+[node name="In" type="Area3D" parent="Teleport2" index="0" unique_id=1935136855 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1030416, 4.583463, 0)
+script = ExtResource("6_xtq48")
+target = NodePath("../Out")
+keep_z = true
+whitelist_groups = Array[StringName]([&"ball"])
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Teleport2/In" index="0" unique_id=1109475515]
+mesh = SubResource("BoxMesh_xtq48")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport2/In" index="1" unique_id=66831545]
+shape = SubResource("BoxShape3D_t4llk")
+
+[node name="In2" type="Area3D" parent="Teleport2" index="1" unique_id=2140018808 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7405376, 0.16499996, -1.8315991)
+script = ExtResource("6_xtq48")
+target = NodePath("../Out")
+whitelist_groups = Array[StringName]([&"ball"])
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Teleport2/In2" index="0" unique_id=198671631]
+visible = false
+mesh = SubResource("BoxMesh_emt5b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport2/In2" index="1" unique_id=434810889]
+shape = SubResource("BoxShape3D_r3yyv")
+
+[node name="Out" type="MeshInstance3D" parent="Teleport2" index="2" unique_id=432992388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1030416, 6.455028, 0)
+mesh = SubResource("BoxMesh_sfmhv")
+skeleton = NodePath("../..")

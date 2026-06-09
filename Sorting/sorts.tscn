@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dhwfgoqh0bsf"]
+
+[ext_resource type="Script" uid="uid://bb0pu7qv3sfyl" path="res://Sorting/BogoSort/bogo_sorter.gd" id="1_2rj6p"]
+
+[node name="Sorts" type="Node" unique_id=1785050941]
+
+[node name="BogoSort" type="Node" parent="." unique_id=1092153839]
+script = ExtResource("1_2rj6p")
+size = 10
