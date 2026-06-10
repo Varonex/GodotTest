@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://6tykprk2ndmi"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h7w3h"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="Gradient" id="Gradient_pe72g"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0.9765625, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8vmec"]
+gradient = SubResource("Gradient_pe72g")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lr758"]
+radius = 2.0
+height = 8.0
+
+[node name="Ball" type="RigidBody2D" unique_id=1350537222 groups=["ball"]]
+freeze_mode = 1
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=84909840]
+rotation = 1.5707964
+mesh = SubResource("CapsuleMesh_h7w3h")
+texture = SubResource("GradientTexture2D_8vmec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1554708402]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_lr758")

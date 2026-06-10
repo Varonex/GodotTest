@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://1sokjjg8da37"]
+
+[ext_resource type="Script" uid="uid://dsb8a0qybx6ji" path="res://CrossRefCrash/script_a_references_b.gd" id="1_xajxx"]
+[ext_resource type="Script" uid="uid://bvkdmnuc173mo" path="res://CrossRefCrash/script_b_references_a.gd" id="2_og8wn"]
+
+[node name="Test" type="Node" unique_id=1162132377]
+
+[node name="A" type="Node" parent="." unique_id=921624217]
+script = ExtResource("1_xajxx")
+
+[node name="B" type="Node" parent="." unique_id=1246543300]
+script = ExtResource("2_og8wn")

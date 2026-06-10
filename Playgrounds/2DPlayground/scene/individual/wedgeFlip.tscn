@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cpmvsq0mux3g1"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_px8q6"]
+left_to_right = 0.0
+size = Vector3(90, 90, 1)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_2urg5"]
+points = PackedVector2Array(45, -45, 45, 45, -45, 45)
+
+[node name="Wedge" type="StaticBody2D" unique_id=1131427111]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=100343408]
+rotation = 3.1415927
+mesh = SubResource("PrismMesh_px8q6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1373652625]
+shape = SubResource("ConvexPolygonShape2D_2urg5")

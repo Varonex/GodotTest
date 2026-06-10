@@ -3,12 +3,24 @@
 [ext_resource type="Script" uid="uid://bec8af5y2kfq1" path="res://Playgrounds/2DPlayground/2d_playground.gd" id="1_xu817"]
 [ext_resource type="PackedScene" uid="uid://d1pwdwxfh81px" path="res://Playgrounds/shared/hud.tscn" id="2_55x3e"]
 [ext_resource type="Script" uid="uid://i31c0lprunf2" path="res://Playgrounds/2DPlayground/script/custom_camera2d.gd" id="2_btbfc"]
-[ext_resource type="Script" uid="uid://ia2mtyp2q8ey" path="res://test_entry.gd" id="3_hfb3m"]
+[ext_resource type="Script" uid="uid://ia2mtyp2q8ey" path="res://Playgrounds/shared/script/test_entry.gd" id="3_hfb3m"]
 [ext_resource type="PackedScene" uid="uid://dxl7jpo6h362k" path="res://Playgrounds/2DPlayground/scene/test_entry/falling_balls.tscn" id="4_hfb3m"]
+[ext_resource type="PackedScene" uid="uid://cgh86foebi43w" path="res://Playgrounds/2DPlayground/scene/test_entry/music.tscn" id="5_gnmlr"]
+[ext_resource type="PackedScene" uid="uid://dbd3hwlgglxa7" path="res://Playgrounds/2DPlayground/scene/test_entry/falling_pills.tscn" id="5_tvuah"]
 
 [sub_resource type="Resource" id="Resource_gnmlr"]
 script = ExtResource("3_hfb3m")
 scene = ExtResource("4_hfb3m")
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
+[sub_resource type="Resource" id="Resource_e13so"]
+script = ExtResource("3_hfb3m")
+scene = ExtResource("5_tvuah")
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
+[sub_resource type="Resource" id="Resource_tvuah"]
+script = ExtResource("3_hfb3m")
+scene = ExtResource("5_gnmlr")
 metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_13o7v"]
@@ -39,7 +51,7 @@ height = 5000
 [node name="2DPlayground" type="Node2D" unique_id=1949748655]
 script = ExtResource("1_xu817")
 hud_scene = ExtResource("2_55x3e")
-test_scenes = Array[ExtResource("3_hfb3m")]([SubResource("Resource_gnmlr")])
+test_scenes = Array[ExtResource("3_hfb3m")]([SubResource("Resource_gnmlr"), SubResource("Resource_e13so"), SubResource("Resource_tvuah")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=82877508]
 script = ExtResource("2_btbfc")

@@ -5,7 +5,14 @@
 [ext_resource type="Script" uid="uid://c0lpby1xmvkay" path="res://Playgrounds/2DPlayground/script/spawner2d.gd" id="2_px8q6"]
 [ext_resource type="PackedScene" uid="uid://eybxaq78yh65" path="res://Playgrounds/2DPlayground/scene/individual/ball.tscn" id="3_px8q6"]
 [ext_resource type="PackedScene" uid="uid://n6bm61mdijdx" path="res://Playgrounds/2DPlayground/scene/individual/cube.tscn" id="3_q1yko"]
+[ext_resource type="Script" uid="uid://baahm8ave6uhf" path="res://Playgrounds/2DPlayground/script/mover2d.gd" id="6_cpu77"]
 [ext_resource type="Script" uid="uid://d3vterleewyu1" path="res://Playgrounds/2DPlayground/script/teleporter2d.gd" id="6_l0mhc"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_cpu77"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvxpl"]
+size = Vector2(10, 10)
 
 [sub_resource type="QuadMesh" id="QuadMesh_q1yko"]
 size = Vector2(60, 5)
@@ -61,7 +68,52 @@ position = Vector2(-46, 105)
 position = Vector2(88, 30)
 constant_linear_velocity = Vector2(-750, 0)
 
-[node name="Teleport1" type="Node2D" parent="." index="5" unique_id=358558063]
+[node name="MovingCube" type="AnimatableBody2D" parent="." index="5" unique_id=573666814]
+position = Vector2(18, 119)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="MovingCube" index="0" unique_id=163110756]
+mesh = SubResource("QuadMesh_cpu77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCube" index="1" unique_id=409041359]
+shape = SubResource("RectangleShape2D_fvxpl")
+
+[node name="Mover" type="Node2D" parent="MovingCube" index="2" unique_id=323536547 node_paths=PackedStringArray("target")]
+script = ExtResource("6_cpu77")
+target = NodePath("..")
+min_offset = Vector2(0, 25)
+max_offset = Vector2(0, -25)
+
+[node name="MovingCube2" type="AnimatableBody2D" parent="." index="6" unique_id=1186763551]
+position = Vector2(131, 119)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="MovingCube2" index="0" unique_id=2020630730]
+mesh = SubResource("QuadMesh_cpu77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCube2" index="1" unique_id=664939507]
+shape = SubResource("RectangleShape2D_fvxpl")
+
+[node name="Mover" type="Node2D" parent="MovingCube2" index="2" unique_id=1602177901 node_paths=PackedStringArray("target")]
+script = ExtResource("6_cpu77")
+target = NodePath("..")
+min_offset = Vector2(0, 25)
+max_offset = Vector2(0, -25)
+
+[node name="MovingCube3" type="AnimatableBody2D" parent="." index="7" unique_id=898045595]
+position = Vector2(77, 137)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="MovingCube3" index="0" unique_id=1941933516]
+mesh = SubResource("QuadMesh_cpu77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCube3" index="1" unique_id=681714173]
+shape = SubResource("RectangleShape2D_fvxpl")
+
+[node name="Mover" type="Node2D" parent="MovingCube3" index="2" unique_id=1062181951 node_paths=PackedStringArray("target")]
+script = ExtResource("6_cpu77")
+target = NodePath("..")
+min_offset = Vector2(40, 0)
+max_offset = Vector2(-40, 0)
+
+[node name="Teleport1" type="Node2D" parent="." index="8" unique_id=358558063]
 
 [node name="In" type="Area2D" parent="Teleport1" index="0" unique_id=72442152 node_paths=PackedStringArray("target")]
 position = Vector2(-121, 148)
@@ -81,7 +133,7 @@ position = Vector2(90, 37.5)
 mesh = SubResource("QuadMesh_g3mip")
 texture = SubResource("GradientTexture2D_fvxpl")
 
-[node name="Teleport2" type="Node2D" parent="." index="6" unique_id=997777152]
+[node name="Teleport2" type="Node2D" parent="." index="9" unique_id=997777152]
 
 [node name="In" type="Area2D" parent="Teleport2" index="0" unique_id=462702033 node_paths=PackedStringArray("target")]
 position = Vector2(-121, 19)

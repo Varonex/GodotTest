@@ -36,7 +36,11 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 
 	if whitelist_groups.size() == 0 or _is_in_whitelist(body):
-		body.global_transform.origin = Vector2(
+		var t: Transform2D = body.global_transform
+		
+		t.origin = Vector2(
 				(body if keep_x else target).global_position.x,
 				(body if keep_y else target).global_position.y
 		) + offset
+		
+		body.set_deferred(&"global_transform", t)
