@@ -4,7 +4,7 @@
 bounce = 0.35
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_613k2"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 0.90588236, 1, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_s7dda"]
 material = SubResource("StandardMaterial3D_613k2")

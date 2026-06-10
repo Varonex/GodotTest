@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 	rot_y = clampf(rot_y, deg_to_rad(-89), deg_to_rad(89))
 	
 	# On reconstruit la base car problème d'angles d'Euler (attention : ordre YXZ)
-	transform.basis = Basis.from_euler(Vector3(rot_y, rot_x, 0))
+	basis = Basis.from_euler(Vector3(rot_y, rot_x, 0))
 	
 	# On translate
 	transform = transform.translated_local(linear_shift)

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cfa65tj5tljj8"]
 
-[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://3DPlayground/scene/test_entry.tscn" id="1_kt3cp"]
-[ext_resource type="PackedScene" uid="uid://chkkh42uheanr" path="res://3DPlayground/scene/individual/wedge.tscn" id="2_w4ajt"]
-[ext_resource type="Script" uid="uid://bw4j0resbytvj" path="res://3DPlayground/script/spawner3d.gd" id="3_5f5dg"]
-[ext_resource type="PackedScene" uid="uid://bkaf3b18hufq3" path="res://3DPlayground/scene/individual/pill.tscn" id="4_kt3cp"]
+[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://Playgrounds/3DPlayground/scene/test_entry.tscn" id="1_kt3cp"]
+[ext_resource type="PackedScene" uid="uid://chkkh42uheanr" path="res://Playgrounds/3DPlayground/scene/individual/wedge.tscn" id="2_w4ajt"]
+[ext_resource type="Script" uid="uid://bw4j0resbytvj" path="res://Playgrounds/3DPlayground/script/spawner3d.gd" id="3_5f5dg"]
+[ext_resource type="PackedScene" uid="uid://bkaf3b18hufq3" path="res://Playgrounds/3DPlayground/scene/individual/pill.tscn" id="4_kt3cp"]
 
 [node name="TestEntry" unique_id=1729569509 instance=ExtResource("1_kt3cp")]
 

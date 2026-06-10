@@ -20,8 +20,8 @@ extends Node3D
 # ENGINE
 
 func _ready() -> void:
-	var hud: Control = hud_scene.instantiate()
-	get_tree().root.add_child.call_deferred(hud)
+	var hud: CanvasLayer = hud_scene.instantiate()
+	add_sibling.call_deferred(hud)
 	
 	# Instantiation des scènes
 	var i: int = 0

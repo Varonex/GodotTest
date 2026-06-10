@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://g835aocqsi45"]
 
-[ext_resource type="Script" uid="uid://dqto3yi18w8kr" path="res://3DPlayground/3d_playground_main.gd" id="1_h3667"]
-[ext_resource type="PackedScene" uid="uid://d1pwdwxfh81px" path="res://3DPlayground/hud.tscn" id="2_w4lab"]
+[ext_resource type="Script" uid="uid://dqto3yi18w8kr" path="res://Playgrounds/3DPlayground/3d_playground_main.gd" id="1_h3667"]
+[ext_resource type="PackedScene" uid="uid://d1pwdwxfh81px" path="res://Playgrounds/shared/hud.tscn" id="2_w4lab"]
 [ext_resource type="Script" uid="uid://ia2mtyp2q8ey" path="res://test_entry.gd" id="3_erhk8"]
-[ext_resource type="Script" uid="uid://bj5mynyad656b" path="res://3DPlayground/script/custom_camera3d.gd" id="3_w4lab"]
-[ext_resource type="PackedScene" uid="uid://bbtdtm5oullmf" path="res://3DPlayground/scene/test_entry/falling_balls.tscn" id="4_ywqim"]
-[ext_resource type="PackedScene" uid="uid://cfa65tj5tljj8" path="res://3DPlayground/scene/test_entry/falling_pills.tscn" id="5_v5ujr"]
-[ext_resource type="PackedScene" uid="uid://dp5xcg5lgmovu" path="res://3DPlayground/scene/test_entry/music.tscn" id="6_h275o"]
+[ext_resource type="Script" uid="uid://bj5mynyad656b" path="res://Playgrounds/3DPlayground/script/custom_camera3d.gd" id="3_w4lab"]
+[ext_resource type="PackedScene" uid="uid://bbtdtm5oullmf" path="res://Playgrounds/3DPlayground/scene/test_entry/falling_balls.tscn" id="4_ywqim"]
+[ext_resource type="PackedScene" uid="uid://cfa65tj5tljj8" path="res://Playgrounds/3DPlayground/scene/test_entry/falling_pills.tscn" id="5_v5ujr"]
+[ext_resource type="PackedScene" uid="uid://dp5xcg5lgmovu" path="res://Playgrounds/3DPlayground/scene/test_entry/music.tscn" id="6_h275o"]
 
 [sub_resource type="Resource" id="Resource_ywqim"]
 script = ExtResource("3_erhk8")
@@ -28,12 +28,12 @@ metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_w4lab"]
+[sub_resource type="Sky" id="Sky_alumd"]
 sky_material = SubResource("ProceduralSkyMaterial_h3667")
 
 [sub_resource type="Environment" id="Environment_erhk8"]
 background_mode = 2
-sky = SubResource("Sky_w4lab")
+sky = SubResource("Sky_alumd")
 tonemap_mode = 2
 glow_enabled = true
 

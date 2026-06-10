@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dxl7jpo6h362k"]
+
+[ext_resource type="PackedScene" uid="uid://c6s5ue16b0l6t" path="res://Playgrounds/2DPlayground/scene/test_entry.tscn" id="1_228ur"]
+[ext_resource type="PackedScene" uid="uid://tneyywdrrt3" path="res://Playgrounds/2DPlayground/scene/individual/wedge.tscn" id="2_bbnds"]
+[ext_resource type="Script" uid="uid://c0lpby1xmvkay" path="res://Playgrounds/2DPlayground/script/spawner2d.gd" id="2_px8q6"]
+[ext_resource type="PackedScene" uid="uid://eybxaq78yh65" path="res://Playgrounds/2DPlayground/scene/individual/ball.tscn" id="3_px8q6"]
+[ext_resource type="PackedScene" uid="uid://n6bm61mdijdx" path="res://Playgrounds/2DPlayground/scene/individual/cube.tscn" id="3_q1yko"]
+[ext_resource type="Script" uid="uid://d3vterleewyu1" path="res://Playgrounds/2DPlayground/script/teleporter2d.gd" id="6_l0mhc"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_q1yko"]
+size = Vector2(60, 5)
+
+[sub_resource type="Gradient" id="Gradient_l0mhc"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cpu77"]
+gradient = SubResource("Gradient_l0mhc")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1yko"]
+size = Vector2(60, 5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_g3mip"]
+size = Vector2(60, 5)
+
+[sub_resource type="Gradient" id="Gradient_q1yko"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.1015625, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fvxpl"]
+gradient = SubResource("Gradient_q1yko")
+
+[sub_resource type="QuadMesh" id="QuadMesh_l0mhc"]
+size = Vector2(60, 5)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1544u"]
+gradient = SubResource("Gradient_l0mhc")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3mip"]
+size = Vector2(60, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1544u"]
+size = Vector2(5, 5)
+
+[node name="TestEntry" unique_id=1864604169 instance=ExtResource("1_228ur")]
+
+[node name="Spawner2D" type="Marker2D" parent="." index="2" unique_id=1213938702 node_paths=PackedStringArray("container")]
+position = Vector2(93, -61)
+script = ExtResource("2_px8q6")
+container = NodePath(".")
+blueprint = ExtResource("3_px8q6")
+wait_time = 0.05
+kill_time = 15.0
+spawn_range = Vector2(15, 50)
+metadata/_custom_type_script = "uid://c0lpby1xmvkay"
+
+[node name="Wedge" parent="." index="3" unique_id=1131427111 instance=ExtResource("2_bbnds")]
+position = Vector2(-46, 105)
+
+[node name="Cube" parent="." index="4" unique_id=1001455534 instance=ExtResource("3_q1yko")]
+position = Vector2(88, 30)
+constant_linear_velocity = Vector2(-750, 0)
+
+[node name="Teleport1" type="Node2D" parent="." index="5" unique_id=358558063]
+
+[node name="In" type="Area2D" parent="Teleport1" index="0" unique_id=72442152 node_paths=PackedStringArray("target")]
+position = Vector2(-121, 148)
+script = ExtResource("6_l0mhc")
+target = NodePath("../Out")
+whitelist_groups = Array[StringName]([&"ball"])
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Teleport1/In" index="0" unique_id=1171890193]
+mesh = SubResource("QuadMesh_q1yko")
+texture = SubResource("GradientTexture2D_cpu77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport1/In" index="1" unique_id=1528397987]
+shape = SubResource("RectangleShape2D_q1yko")
+
+[node name="Out" type="MeshInstance2D" parent="Teleport1" index="1" unique_id=61478448]
+position = Vector2(90, 37.5)
+mesh = SubResource("QuadMesh_g3mip")
+texture = SubResource("GradientTexture2D_fvxpl")
+
+[node name="Teleport2" type="Node2D" parent="." index="6" unique_id=997777152]
+
+[node name="In" type="Area2D" parent="Teleport2" index="0" unique_id=462702033 node_paths=PackedStringArray("target")]
+position = Vector2(-121, 19)
+script = ExtResource("6_l0mhc")
+target = NodePath("../Out")
+whitelist_groups = Array[StringName]([&"ball"])
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Teleport2/In" index="0" unique_id=1027646101]
+mesh = SubResource("QuadMesh_l0mhc")
+texture = SubResource("GradientTexture2D_1544u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport2/In" index="1" unique_id=488305728]
+shape = SubResource("RectangleShape2D_g3mip")
+
+[node name="In2" type="Area2D" parent="Teleport2" index="1" unique_id=805543329 node_paths=PackedStringArray("target")]
+position = Vector2(148, 148)
+script = ExtResource("6_l0mhc")
+target = NodePath("../Out")
+whitelist_groups = Array[StringName]([&"ball"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport2/In2" index="0" unique_id=40844479]
+shape = SubResource("RectangleShape2D_1544u")
+
+[node name="Out" type="MeshInstance2D" parent="Teleport2" index="2" unique_id=1882198375]
+position = Vector2(-121, -41)
+mesh = SubResource("QuadMesh_g3mip")
+texture = SubResource("GradientTexture2D_fvxpl")

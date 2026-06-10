@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://eybxaq78yh65"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pe72g"]
+radius = 2.5
+height = 5.0
+
+[sub_resource type="Gradient" id="Gradient_pe72g"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0.9765625, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8vmec"]
+gradient = SubResource("Gradient_pe72g")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q2d5r"]
+radius = 2.5
+
+[node name="Ball" type="RigidBody2D" unique_id=1350537222 groups=["ball"]]
+freeze_mode = 1
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=84909840]
+mesh = SubResource("SphereMesh_pe72g")
+texture = SubResource("GradientTexture2D_8vmec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1554708402]
+shape = SubResource("CircleShape2D_q2d5r")

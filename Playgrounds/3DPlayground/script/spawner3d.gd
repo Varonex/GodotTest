@@ -3,7 +3,7 @@ class_name Spawner3D extends Marker3D
 
 # VARIABLES
 
-## Parent container that should receive each and every 
+## Parent container that should receive each and every copy. 
 @export var container: Node3D
 
 ## Scene to instantiate.
@@ -26,7 +26,7 @@ class_name Spawner3D extends Marker3D
 	set(v):
 		enabled = v
 		
-		if not is_node_ready(): return
+		if not _timer.is_node_ready(): return
 		
 		if v:
 			_timer.start(wait_time)

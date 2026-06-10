@@ -29,6 +29,8 @@ Autoload="*uid://dkn7lvutxbc56"
 
 [display]
 
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
@@ -37,10 +39,13 @@ window/vsync/vsync_mode=0
 [file_customization]
 
 folder_colors={
-"res://3DPlayground/": "orange",
 "res://BehaviorTree/": "red",
 "res://Exporting/": "yellow",
 "res://File_Dir_Tool/": "teal",
+"res://Playgrounds/": "blue",
+"res://Playgrounds/2DPlayground/": "green",
+"res://Playgrounds/3DPlayground/": "orange",
+"res://Playgrounds/shared/": "blue",
 "res://RPC/": "orange",
 "res://Reflection/": "pink",
 "res://Shading/": "blue",
@@ -104,4 +109,3 @@ fov_down={
 [physics]
 
 3d/physics_engine="Jolt Physics"
-2d/default_gravity_vector=Vector3(0.201, -1, 0)

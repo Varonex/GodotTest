@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bbtdtm5oullmf"]
 
-[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://3DPlayground/scene/test_entry.tscn" id="1_fs5rt"]
-[ext_resource type="PackedScene" uid="uid://chkkh42uheanr" path="res://3DPlayground/scene/individual/wedge.tscn" id="2_jvi2t"]
-[ext_resource type="Script" uid="uid://bw4j0resbytvj" path="res://3DPlayground/script/spawner3d.gd" id="3_jvi2t"]
-[ext_resource type="PackedScene" uid="uid://btfdmak0tyauu" path="res://3DPlayground/scene/individual/cube.tscn" id="3_wlop2"]
-[ext_resource type="PackedScene" uid="uid://jpraesdn3rd2" path="res://3DPlayground/scene/individual/ball.tscn" id="4_l4i0x"]
-[ext_resource type="Script" uid="uid://b2vxjp5klesqr" path="res://3DPlayground/script/teleporter3d.gd" id="6_xtq48"]
+[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://Playgrounds/3DPlayground/scene/test_entry.tscn" id="1_fs5rt"]
+[ext_resource type="PackedScene" uid="uid://chkkh42uheanr" path="res://Playgrounds/3DPlayground/scene/individual/wedge.tscn" id="2_jvi2t"]
+[ext_resource type="Script" uid="uid://bw4j0resbytvj" path="res://Playgrounds/3DPlayground/script/spawner3d.gd" id="3_jvi2t"]
+[ext_resource type="PackedScene" uid="uid://btfdmak0tyauu" path="res://Playgrounds/3DPlayground/scene/individual/cube.tscn" id="3_wlop2"]
+[ext_resource type="PackedScene" uid="uid://jpraesdn3rd2" path="res://Playgrounds/3DPlayground/scene/individual/ball.tscn" id="4_l4i0x"]
+[ext_resource type="Script" uid="uid://b2vxjp5klesqr" path="res://Playgrounds/3DPlayground/script/teleporter3d.gd" id="6_xtq48"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_l4i0x"]
 size = Vector3(0.35, 0.35, 2.5)
@@ -120,7 +120,7 @@ mesh = SubResource("BoxMesh_l4i0x")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Shredder3" index="1" unique_id=1136254529]
 shape = SubResource("BoxShape3D_l4i0x")
 
-[node name="Spawner3d" type="Marker3D" parent="." index="7" unique_id=191343630 node_paths=PackedStringArray("container")]
+[node name="Spawner3D" type="Marker3D" parent="." index="7" unique_id=191343630 node_paths=PackedStringArray("container")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7453463, 8.679903, 0)
 script = ExtResource("3_jvi2t")
 container = NodePath(".")

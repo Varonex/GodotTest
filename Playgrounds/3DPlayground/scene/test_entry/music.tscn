@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dp5xcg5lgmovu"]
 
-[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://3DPlayground/scene/test_entry.tscn" id="1_ednyn"]
-[ext_resource type="AudioStream" uid="uid://bvdysafqynnp1" path="res://assets/tadadataaaaa_tadadatataaaaaa.wav" id="2_emg8p"]
+[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://Playgrounds/3DPlayground/scene/test_entry.tscn" id="1_ednyn"]
+[ext_resource type="AudioStream" uid="uid://bvdysafqynnp1" path="res://assets/msc/tadadataaaaa_tadadatataaaaaa.wav" id="2_emg8p"]
 
 [node name="TestEntry" unique_id=1729569509 instance=ExtResource("1_ednyn")]
 
