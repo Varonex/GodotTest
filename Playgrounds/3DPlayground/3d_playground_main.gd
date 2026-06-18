@@ -45,5 +45,5 @@ func _ready() -> void:
 		var z: float = idz * unit_size + idz * margin
 		
 		scene.global_position = Vector3(x, 0, z)
-			
+		
 		i += 1

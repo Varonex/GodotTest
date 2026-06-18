@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dubso8uxq7ii1"]
+
+[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://Playgrounds/3DPlayground/scene/test_entry.tscn" id="1_f7gcc"]
+[ext_resource type="Shader" uid="uid://dagxudotm48r8" path="res://Playgrounds/3DPlayground/shader/wave_fourth_try.gdshader" id="2_f7gcc"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_njx6i"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ixdlm"]
+noise = SubResource("FastNoiseLite_njx6i")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4moxu"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7kvyh"]
+noise = SubResource("FastNoiseLite_4moxu")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1st0v"]
+render_priority = 0
+shader = ExtResource("2_f7gcc")
+shader_parameter/water_color = Color(0.495636, 0.68406767, 0.8515625, 1)
+shader_parameter/water_noise_1 = SubResource("NoiseTexture2D_ixdlm")
+shader_parameter/water_noise_2 = SubResource("NoiseTexture2D_7kvyh")
+shader_parameter/depth_distance = 1.10000001639132
+shader_parameter/water_color_ratio = 0.5000000074506
+shader_parameter/beers_law = 2.70000004023324
+shader_parameter/normal_scale = 0.60000000894072
+shader_parameter/roughness_scale = 0.2
+shader_parameter/time_scale = 8.20000012218984
+shader_parameter/uv_scale = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fs7qk"]
+material = SubResource("ShaderMaterial_1st0v")
+size = Vector2(10, 10)
+subdivide_width = 256
+subdivide_depth = 128
+
+[node name="TestEntry" unique_id=1729569509 instance=ExtResource("1_f7gcc")]
+
+[node name="Waves" type="MeshInstance3D" parent="." index="2" unique_id=512983812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5545228, 0)
+mesh = SubResource("PlaneMesh_fs7qk")

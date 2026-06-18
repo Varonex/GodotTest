@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dvvgcey80fctk"]
+
+[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://Playgrounds/3DPlayground/scene/test_entry.tscn" id="1_fj3vn"]
+[ext_resource type="Shader" uid="uid://c0o28e747dd6l" path="res://Playgrounds/3DPlayground/shader/wave_fifth_try.gdshader" id="2_fj3vn"]
+
+[sub_resource type="Cubemap" id="Cubemap_vx7wh"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2oorw"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y17ri"]
+noise = SubResource("FastNoiseLite_2oorw")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_p1ug4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k4pcu"]
+noise = SubResource("FastNoiseLite_p1ug4")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n4307"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y28rx"]
+noise = SubResource("FastNoiseLite_n4307")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yra81"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xu8yt"]
+noise = SubResource("FastNoiseLite_yra81")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1st0v"]
+render_priority = 0
+shader = ExtResource("2_fj3vn")
+shader_parameter/wave_speed = 0.2
+shader_parameter/wave_a = Vector4(3.615, 1, 0.35, 3)
+shader_parameter/wave_b = Vector4(-0.285, 0.61, 0.405, 1.565)
+shader_parameter/wave_c = Vector4(-3.71, 0.38, 0.345, 1.165)
+shader_parameter/sampler_scale = Vector2(0.25, 0.25)
+shader_parameter/sampler_direction = Vector2(0.05, 0.04)
+shader_parameter/uv_sampler = SubResource("NoiseTexture2D_xu8yt")
+shader_parameter/uv_sampler_scale = Vector2(0.25, 0.25)
+shader_parameter/uv_sampler_strength = 0.04
+shader_parameter/normalmap_a_sampler = SubResource("NoiseTexture2D_k4pcu")
+shader_parameter/normalmap_b_sampler = SubResource("NoiseTexture2D_y28rx")
+shader_parameter/foam_sampler = SubResource("NoiseTexture2D_y17ri")
+shader_parameter/foam_level = 0.5
+shader_parameter/refraction = 0.075
+shader_parameter/color_deep = Color(0, 0.7529412, 0.8039216, 1)
+shader_parameter/color_shallow = Color(0.22091636, 0.4845292, 0.735357, 1)
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = -0.75
+shader_parameter/projector = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/caustic_sampler = SubResource("Cubemap_vx7wh")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fs7qk"]
+material = SubResource("ShaderMaterial_1st0v")
+size = Vector2(10, 10)
+subdivide_width = 256
+subdivide_depth = 128
+
+[node name="TestEntry" unique_id=1729569509 instance=ExtResource("1_fj3vn")]
+
+[node name="Waves" type="MeshInstance3D" parent="." index="2" unique_id=512983812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5545228, 0)
+mesh = SubResource("PlaneMesh_fs7qk")

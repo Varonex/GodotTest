@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bk5dxx512e8up"]
 
 [ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://Playgrounds/3DPlayground/scene/test_entry.tscn" id="1_8hw3q"]
-[ext_resource type="Shader" uid="uid://bwpoxg0236c7j" path="res://Playgrounds/3DPlayground/shader/wave.gdshader" id="2_58rd4"]
+[ext_resource type="Shader" uid="uid://bwpoxg0236c7j" path="res://Playgrounds/3DPlayground/shader/wave_first_try.gdshader" id="2_58rd4"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ga6wo"]
 noise_type = 0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dxe6y"]
 noise = SubResource("FastNoiseLite_ga6wo")
+seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1st0v"]
 render_priority = 0

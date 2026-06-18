@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://c1b18yc7efmng"]
+
+[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://Playgrounds/3DPlayground/scene/test_entry.tscn" id="1_flyx0"]
+[ext_resource type="Shader" uid="uid://dwl7hyq1a0knk" path="res://Playgrounds/3DPlayground/shader/wave_second_try.gdshader" id="2_flyx0"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bn2to"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kfm5l"]
+noise = SubResource("FastNoiseLite_bn2to")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cbxg7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6qdpe"]
+noise = SubResource("FastNoiseLite_cbxg7")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ppr3o"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qw0or"]
+noise = SubResource("FastNoiseLite_ppr3o")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_we2ln"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_874q6"]
+noise = SubResource("FastNoiseLite_we2ln")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1st0v"]
+render_priority = 0
+shader = ExtResource("2_flyx0")
+shader_parameter/color_shallow = Color(0.01, 0.2, 0.3, 1)
+shader_parameter/color_depth = Color(0.3, 0.5, 0.6, 1)
+shader_parameter/transparency = 0.6
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.25
+shader_parameter/refraction_intensity = 0.4
+shader_parameter/max_visible_depth = 20.0
+shader_parameter/wave_height_scale = 1.0
+shader_parameter/wave_normal_flatness = 50.0
+shader_parameter/surface_texture_roughness = 0.15
+shader_parameter/surface_texture_scale = 0.1
+shader_parameter/surface_texture_time_scale = 0.06
+shader_parameter/wave_a = SubResource("NoiseTexture2D_qw0or")
+shader_parameter/wave_move_direction_a = Vector2(-1, 0)
+shader_parameter/wave_noise_scale_a = 15.0
+shader_parameter/wave_time_scale_a = 0.15
+shader_parameter/surface_normals_a = SubResource("NoiseTexture2D_kfm5l")
+shader_parameter/surface_normals_move_direction_a = Vector2(-1, 0.2)
+shader_parameter/wave_b = SubResource("NoiseTexture2D_874q6")
+shader_parameter/wave_move_direction_b = Vector2(0, 1)
+shader_parameter/wave_noise_scale_b = 15.0
+shader_parameter/wave_time_scale_b = 0.15
+shader_parameter/surface_normals_b = SubResource("NoiseTexture2D_6qdpe")
+shader_parameter/surface_normals_move_direction_b = Vector2(0.2, 1)
+shader_parameter/ssr_resolution = 1.0
+shader_parameter/ssr_max_travel = 30.0
+shader_parameter/ssr_max_diff = 4.0
+shader_parameter/ssr_mix_strength = 0.7
+shader_parameter/ssr_screen_border_fadeout = 0.3
+shader_parameter/border_color = Color(1, 1, 1, 1)
+shader_parameter/border_scale = 2.0
+shader_parameter/border_near = 0.5
+shader_parameter/border_far = 300.0
+shader_parameter/cut_out_x = 0.0
+shader_parameter/cut_out_z = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fs7qk"]
+material = SubResource("ShaderMaterial_1st0v")
+size = Vector2(10, 10)
+subdivide_width = 256
+subdivide_depth = 128
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_d40gm"]
+
+[node name="TestEntry" unique_id=1729569509 instance=ExtResource("1_flyx0")]
+
+[node name="Waves" type="MeshInstance3D" parent="." index="2" unique_id=512983812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5545228, 0)
+mesh = SubResource("PlaneMesh_fs7qk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3" unique_id=2090117708]
+transform = Transform3D(1, 0, 0, 0, 0.5179268, 0, 0, 0, 3.066636, 0, 3.0315506, 0)
+mesh = SubResource("CylinderMesh_d40gm")
+skeleton = NodePath("")
