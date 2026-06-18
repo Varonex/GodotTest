@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bbtdtm5oullmf" path="res://Playgrounds/3DPlayground/scene/test_entry/falling_balls.tscn" id="4_ywqim"]
 [ext_resource type="PackedScene" uid="uid://cfa65tj5tljj8" path="res://Playgrounds/3DPlayground/scene/test_entry/falling_pills.tscn" id="5_v5ujr"]
 [ext_resource type="PackedScene" uid="uid://dp5xcg5lgmovu" path="res://Playgrounds/3DPlayground/scene/test_entry/music.tscn" id="6_h275o"]
+[ext_resource type="PackedScene" uid="uid://bblxhthjg5rkw" path="res://Playgrounds/3DPlayground/scene/test_entry/particles.tscn" id="7_irp2x"]
+[ext_resource type="PackedScene" uid="uid://bk5dxx512e8up" path="res://Playgrounds/3DPlayground/scene/test_entry/wave.tscn" id="8_y46db"]
 
 [sub_resource type="Resource" id="Resource_ywqim"]
 script = ExtResource("3_erhk8")
@@ -16,11 +18,22 @@ metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
 [sub_resource type="Resource" id="Resource_h275o"]
 script = ExtResource("3_erhk8")
 scene = ExtResource("5_v5ujr")
+enabled = false
 metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
 
 [sub_resource type="Resource" id="Resource_bm471"]
 script = ExtResource("3_erhk8")
 scene = ExtResource("6_h275o")
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
+[sub_resource type="Resource" id="Resource_y46db"]
+script = ExtResource("3_erhk8")
+scene = ExtResource("7_irp2x")
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
+[sub_resource type="Resource" id="Resource_y410j"]
+script = ExtResource("3_erhk8")
+scene = ExtResource("8_y46db")
 metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h3667"]
@@ -48,12 +61,14 @@ size = Vector2(5000, 5000)
 [node name="3DPlayground" type="Node3D" unique_id=2058059926]
 script = ExtResource("1_h3667")
 hud_scene = ExtResource("2_w4lab")
-test_scenes = Array[ExtResource("3_erhk8")]([SubResource("Resource_ywqim"), SubResource("Resource_h275o"), SubResource("Resource_bm471")])
+test_scenes = Array[ExtResource("3_erhk8")]([SubResource("Resource_ywqim"), SubResource("Resource_h275o"), SubResource("Resource_bm471"), SubResource("Resource_y46db"), SubResource("Resource_y410j")])
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1685786785]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 current = true
 script = ExtResource("3_w4lab")
+linear_damping = 10.0
+angular_damping = 10.0
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Camera3D" unique_id=289264113]
 current = true

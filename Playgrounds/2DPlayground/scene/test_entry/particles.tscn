@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://xhpjmtyixhy5"]
+
+[ext_resource type="PackedScene" uid="uid://c6s5ue16b0l6t" path="res://Playgrounds/2DPlayground/scene/test_entry.tscn" id="1_64h4r"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b484y"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m8fbu"]
+particle_flag_disable_z = true
+initial_velocity_min = -200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.12
+scale_max = 0.38
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_64h4r"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[node name="TestEntry" unique_id=1864604169 instance=ExtResource("1_64h4r")]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="2" unique_id=368863085]
+position = Vector2(-77, 0)
+texture = SubResource("CompressedTexture2D_b484y")
+process_material = SubResource("ParticleProcessMaterial_m8fbu")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="3" unique_id=1600568396]
+position = Vector2(64, 0)
+texture = SubResource("CompressedTexture2D_64h4r")
+fixed_fps = 30
+draw_order = 1
+gravity = Vector2(0, 98)
+initial_velocity_min = -200.0
+initial_velocity_max = 200.0
+scale_amount_min = 0.12
+scale_amount_max = 0.38

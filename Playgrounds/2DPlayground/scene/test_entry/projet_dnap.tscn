@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bkie4leurj2qr"]
+
+[ext_resource type="PackedScene" uid="uid://c6s5ue16b0l6t" path="res://Playgrounds/2DPlayground/scene/test_entry.tscn" id="1_3hrkk"]
+[ext_resource type="Shader" uid="uid://dkma0p8eoi5om" path="res://Playgrounds/2DPlayground/shader/projet_dnap.gdshader" id="2_qw0or"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ppr3o"]
+shader = ExtResource("2_qw0or")
+shader_parameter/hauteur_ciel = 0.30000001425
+shader_parameter/coords_sphere = Vector2(0.3, 0.6)
+shader_parameter/rayon_sphere = 0.2000000095
+shader_parameter/coords_tache = Vector2(0.19, 0.5)
+shader_parameter/rayon_tache = 0.262000012445
+shader_parameter/uv_ombre = Vector2(0.59, 0.62)
+shader_parameter/ombre_point_gauche = Vector2(0.59, 0.52)
+shader_parameter/ombre_point_droit = Vector2(0.92, 0.44)
+shader_parameter/couleur_herbe = Color(0.298, 0.6, 0, 1)
+shader_parameter/couleur_ciel = Color(0.812, 0.812, 1, 1)
+shader_parameter/couleur_sphere = Color(0.424, 0.086, 0.227, 1)
+shader_parameter/couleur_tache = Color(1, 1, 1, 1)
+shader_parameter/couleur_ombre = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_qw0or"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ppr3o"]
+gradient = SubResource("Gradient_qw0or")
+width = 200
+height = 200
+
+[node name="TestEntry" unique_id=1864604169 instance=ExtResource("1_3hrkk")]
+
+[node name="TextureImage" type="Sprite2D" parent="." index="2" unique_id=1469505252]
+material = SubResource("ShaderMaterial_ppr3o")
+texture = SubResource("GradientTexture2D_ppr3o")

@@ -17,6 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="GodotTest"
 run/main_scene="uid://g835aocqsi45"
 config/features=PackedStringArray("4.6", "Forward Plus")
+run/max_fps=700
 config/icon="res://icon.svg"
 
 [audio]
@@ -31,10 +32,10 @@ Autoload="*uid://dkn7lvutxbc56"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=3
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
-window/vsync/vsync_mode=0
+window/vsync/vsync_mode=2
 
 [file_customization]
 

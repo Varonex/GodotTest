@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d0cc7xex38alp"]
+
+[ext_resource type="Script" uid="uid://ndt8h34rfg6w" path="res://await/awaiter.gd" id="1_dv42n"]
+[ext_resource type="Script" uid="uid://ddfjluajeaur" path="res://await/emitter.gd" id="2_aepn6"]
+
+[node name="Awaits" type="Node" unique_id=1995934153 node_paths=PackedStringArray("emitter")]
+script = ExtResource("1_dv42n")
+emitter = NodePath("Emits")
+
+[node name="Emits" type="Node" parent="." unique_id=1121736940 node_paths=PackedStringArray("timer")]
+script = ExtResource("2_aepn6")
+timer = NodePath("../Timer")
+
+[node name="Timer" type="Timer" parent="." unique_id=1124170556]
+autostart = true

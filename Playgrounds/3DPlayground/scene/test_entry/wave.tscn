@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bk5dxx512e8up"]
+
+[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://Playgrounds/3DPlayground/scene/test_entry.tscn" id="1_8hw3q"]
+[ext_resource type="Shader" uid="uid://bwpoxg0236c7j" path="res://Playgrounds/3DPlayground/shader/wave.gdshader" id="2_58rd4"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ga6wo"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dxe6y"]
+noise = SubResource("FastNoiseLite_ga6wo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1st0v"]
+render_priority = 0
+shader = ExtResource("2_58rd4")
+shader_parameter/noise = SubResource("NoiseTexture2D_dxe6y")
+shader_parameter/water_color = Color(0.01, 0.03, 0.05, 1)
+shader_parameter/height_scale = 0.75
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fs7qk"]
+material = SubResource("ShaderMaterial_1st0v")
+size = Vector2(10, 10)
+subdivide_width = 256
+subdivide_depth = 128
+
+[node name="TestEntry" unique_id=1729569509 instance=ExtResource("1_8hw3q")]
+
+[node name="Waves" type="MeshInstance3D" parent="." index="2" unique_id=562493637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5545228, 0)
+mesh = SubResource("PlaneMesh_fs7qk")

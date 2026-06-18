@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dxl7jpo6h362k" path="res://Playgrounds/2DPlayground/scene/test_entry/falling_balls.tscn" id="4_hfb3m"]
 [ext_resource type="PackedScene" uid="uid://cgh86foebi43w" path="res://Playgrounds/2DPlayground/scene/test_entry/music.tscn" id="5_gnmlr"]
 [ext_resource type="PackedScene" uid="uid://dbd3hwlgglxa7" path="res://Playgrounds/2DPlayground/scene/test_entry/falling_pills.tscn" id="5_tvuah"]
+[ext_resource type="PackedScene" uid="uid://xhpjmtyixhy5" path="res://Playgrounds/2DPlayground/scene/test_entry/particles.tscn" id="7_e13so"]
+[ext_resource type="PackedScene" uid="uid://bkie4leurj2qr" path="res://Playgrounds/2DPlayground/scene/test_entry/projet_dnap.tscn" id="8_7381o"]
 
 [sub_resource type="Resource" id="Resource_gnmlr"]
 script = ExtResource("3_hfb3m")
@@ -16,11 +18,22 @@ metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
 [sub_resource type="Resource" id="Resource_e13so"]
 script = ExtResource("3_hfb3m")
 scene = ExtResource("5_tvuah")
+enabled = false
 metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
 
 [sub_resource type="Resource" id="Resource_tvuah"]
 script = ExtResource("3_hfb3m")
 scene = ExtResource("5_gnmlr")
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
+[sub_resource type="Resource" id="Resource_7381o"]
+script = ExtResource("3_hfb3m")
+scene = ExtResource("7_e13so")
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
+[sub_resource type="Resource" id="Resource_slnao"]
+script = ExtResource("3_hfb3m")
+scene = ExtResource("8_7381o")
 metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_13o7v"]
@@ -51,14 +64,15 @@ height = 5000
 [node name="2DPlayground" type="Node2D" unique_id=1949748655]
 script = ExtResource("1_xu817")
 hud_scene = ExtResource("2_55x3e")
-test_scenes = Array[ExtResource("3_hfb3m")]([SubResource("Resource_gnmlr"), SubResource("Resource_e13so"), SubResource("Resource_tvuah")])
+test_scenes = Array[ExtResource("3_hfb3m")]([SubResource("Resource_gnmlr"), SubResource("Resource_e13so"), SubResource("Resource_tvuah"), SubResource("Resource_7381o"), SubResource("Resource_slnao")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=82877508]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 script = ExtResource("2_btbfc")
+linear_speed = 700.0
 
 [node name="AudioListener2D" type="AudioListener2D" parent="Camera2D" unique_id=773897141]
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1416093430]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1389923381]
 environment = SubResource("Environment_n2rbb")

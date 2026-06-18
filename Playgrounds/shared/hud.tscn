@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1pwdwxfh81px"]
 
 [ext_resource type="Script" uid="uid://4k7patnayoe5" path="res://Playgrounds/shared/script/fps_label.gd" id="1_0m6ph"]
-[ext_resource type="Script" uid="uid://c7xm71m52jtn6" path="res://Playgrounds/shared/script/elements_label.gd" id="2_gspv7"]
+[ext_resource type="Script" uid="uid://c7xm71m52jtn6" path="res://Playgrounds/shared/script/balls_label.gd" id="2_gspv7"]
 [ext_resource type="Script" uid="uid://bxn0jxrmohxl3" path="res://Playgrounds/shared/script/quit_button.gd" id="3_m6w2a"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1528747774]

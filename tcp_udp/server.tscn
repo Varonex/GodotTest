@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cygu5r5mndbk7"]
+
+[ext_resource type="Script" uid="uid://dkjxauaikvaj4" path="res://tcp_udp/tcp_udp.gd" id="1_7rqfi"]
+
+[node name="Server" type="Node" unique_id=344464826]
+script = ExtResource("1_7rqfi")
