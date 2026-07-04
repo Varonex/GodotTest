@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c1losky585f0f"]
+
+[ext_resource type="Script" uid="uid://diejh6l7vlg3t" path="res://CallableBound/callable_bound.gd" id="1_jn430"]
+
+[node name="CallableBound" type="Node" unique_id=1627031914]
+script = ExtResource("1_jn430")

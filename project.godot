@@ -32,7 +32,6 @@ Autoload="*uid://dkn7lvutxbc56"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 window/vsync/vsync_mode=2
@@ -44,14 +43,15 @@ folder_colors={
 "res://CrossRefCrash/": "teal",
 "res://Exporting/": "yellow",
 "res://File_Dir_Tool/": "teal",
+"res://Lifecycle/": "yellow",
 "res://Playgrounds/": "blue",
 "res://Playgrounds/2DPlayground/": "green",
 "res://Playgrounds/3DPlayground/": "orange",
 "res://Playgrounds/shared/": "blue",
 "res://RPC/": "orange",
 "res://Reflection/": "pink",
-"res://Shading/": "blue",
 "res://StateMachine/": "yellow",
+"res://Structures/": "red",
 "res://Threading/": "green",
 "res://ToolScriptTest/": "purple",
 "res://TypingIssueWithDS/": "gray",
@@ -112,3 +112,7 @@ fov_down={
 
 3d/physics_engine="Jolt Physics"
 2d/solver/solver_iterations=32
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

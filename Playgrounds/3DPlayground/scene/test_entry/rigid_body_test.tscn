@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://by6pjvj4kkc02"]
+
+[ext_resource type="PackedScene" uid="uid://bqnhxykwdcwuk" path="res://Playgrounds/3DPlayground/scene/test_entry.tscn" id="1_vn2ic"]
+[ext_resource type="Script" uid="uid://d2ppyedxhmudy" path="res://Playgrounds/3DPlayground/script/custom_rigid_body_3d.gd" id="2_p18gc"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_d40gm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6h7n1"]
+
+[node name="TestEntry" unique_id=1729569509 instance=ExtResource("1_vn2ic")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="2" unique_id=1013750936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.222595, 0)
+script = ExtResource("2_p18gc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" index="0" unique_id=866084582]
+mesh = SubResource("SphereMesh_d40gm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="1" unique_id=1111630184]
+shape = SubResource("SphereShape3D_6h7n1")

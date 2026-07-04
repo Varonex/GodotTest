@@ -107,7 +107,12 @@ enum CustomEnum
 
 @export_custom(PROPERTY_HINT_EXPRESSION, "") var Expr: String
 @export_custom(PROPERTY_HINT_LINK, "") var LinkedVecs: Vector3
+@export_custom(PROPERTY_HINT_LOCALE_ID, "") var Locale: String
+@export_custom(PROPERTY_HINT_OBJECT_ID, "") var ObjectId: int = get_instance_id()
+@export_custom(PROPERTY_HINT_OBJECT_TOO_BIG, "") var ObjectTooBig: int
+@export_custom(PROPERTY_HINT_ONESHOT, "") var OneShot: bool
 @export_custom(PROPERTY_HINT_PASSWORD, "") var Password: String
+@export_custom(PROPERTY_HINT_SAVE_FILE, "") var SaveFile: String
 
 func run() -> void:
 	var properties: Array[Dictionary] = get_property_list()

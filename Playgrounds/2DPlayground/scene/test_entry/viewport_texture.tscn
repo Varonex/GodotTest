@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://baxq5wvw2r3x1"]
+
+[ext_resource type="PackedScene" uid="uid://c6s5ue16b0l6t" path="res://Playgrounds/2DPlayground/scene/test_entry.tscn" id="1_vqk36"]
+[ext_resource type="Shader" uid="uid://cb7qmx3p7g8og" path="res://Playgrounds/2DPlayground/shader/half_shader.gdshader" id="2_4n304"]
+[ext_resource type="Texture2D" uid="uid://c7u75fhapf3s" path="res://icon.svg" id="3_fphx2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ue5o"]
+shader = ExtResource("2_4n304")
+
+[node name="TestEntry" unique_id=1864604169 instance=ExtResource("1_vqk36")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2" unique_id=1515201930]
+material = SubResource("ShaderMaterial_3ue5o")
+texture = ExtResource("3_fphx2")

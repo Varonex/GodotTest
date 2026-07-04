@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dexc3qyymb7yg"]
+
+[ext_resource type="Script" uid="uid://cajhkjjh72n0e" path="res://MagicMethods/magic_method_test.gd" id="1_h4xqq"]
+
+[node name="MagicMethodTest" type="Node" unique_id=310114676]
+script = ExtResource("1_h4xqq")

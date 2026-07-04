@@ -14,6 +14,7 @@
 [ext_resource type="Shader" uid="uid://dunktf5igr1aa" path="res://Playgrounds/3DPlayground/shader/wave_third_try.gdshader" id="11_3ee3o"]
 [ext_resource type="PackedScene" uid="uid://dubso8uxq7ii1" path="res://Playgrounds/3DPlayground/scene/test_entry/wave_fourth_try.tscn" id="12_sbvcr"]
 [ext_resource type="PackedScene" uid="uid://dvvgcey80fctk" path="res://Playgrounds/3DPlayground/scene/test_entry/wave_fifth_try.tscn" id="13_2olwj"]
+[ext_resource type="PackedScene" uid="uid://by6pjvj4kkc02" path="res://Playgrounds/3DPlayground/scene/test_entry/rigid_body_test.tscn" id="14_q7ybb"]
 
 [sub_resource type="Resource" id="Resource_ywqim"]
 script = ExtResource("3_erhk8")
@@ -98,6 +99,11 @@ script = ExtResource("3_erhk8")
 scene = ExtResource("13_2olwj")
 metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
 
+[sub_resource type="Resource" id="Resource_3ee3o"]
+script = ExtResource("3_erhk8")
+scene = ExtResource("14_q7ybb")
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h3667"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -123,7 +129,7 @@ size = Vector2(5000, 5000)
 [node name="3DPlayground" type="Node3D" unique_id=2058059926]
 script = ExtResource("1_h3667")
 hud_scene = ExtResource("2_w4lab")
-test_scenes = Array[ExtResource("3_erhk8")]([SubResource("Resource_ywqim"), SubResource("Resource_h275o"), SubResource("Resource_bm471"), SubResource("Resource_y46db"), SubResource("Resource_y410j"), SubResource("Resource_rjf7e"), SubResource("Resource_a2hut"), SubResource("Resource_ms552"), SubResource("Resource_5muif")])
+test_scenes = Array[ExtResource("3_erhk8")]([SubResource("Resource_ywqim"), SubResource("Resource_h275o"), SubResource("Resource_bm471"), SubResource("Resource_y46db"), SubResource("Resource_y410j"), SubResource("Resource_rjf7e"), SubResource("Resource_a2hut"), SubResource("Resource_ms552"), SubResource("Resource_5muif"), SubResource("Resource_3ee3o")])
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1685786785]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)

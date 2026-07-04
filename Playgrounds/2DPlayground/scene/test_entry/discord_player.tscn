@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dg76bn5ymatx0"]
+
+[ext_resource type="PackedScene" uid="uid://c6s5ue16b0l6t" path="res://Playgrounds/2DPlayground/scene/test_entry.tscn" id="1_kdydb"]
+[ext_resource type="Texture2D" uid="uid://c7u75fhapf3s" path="res://icon.svg" id="2_2vidw"]
+[ext_resource type="Script" uid="uid://3wfnk4ljrv38" path="res://Playgrounds/2DPlayground/script/discord_character2d.gd" id="2_abqpb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d40gm"]
+size = Vector2(32, 32)
+
+[node name="TestEntry" unique_id=1864604169 instance=ExtResource("1_kdydb")]
+
+[node name="DiscordCharacter" type="CharacterBody2D" parent="." index="2" unique_id=35747871]
+position = Vector2(0, 94)
+script = ExtResource("2_abqpb")
+
+[node name="Sprite2D" type="Sprite2D" parent="DiscordCharacter" index="0" unique_id=619231176]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_2vidw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DiscordCharacter" index="1" unique_id=1671581488]
+shape = SubResource("RectangleShape2D_d40gm")

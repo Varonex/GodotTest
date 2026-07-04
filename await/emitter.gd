@@ -15,4 +15,3 @@ func _on_timeout() -> void:
 	test.emit()
 	test1.emit(randi())
 	test2.emit(randi(), randi())
-	

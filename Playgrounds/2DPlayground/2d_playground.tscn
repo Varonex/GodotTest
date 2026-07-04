@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dbd3hwlgglxa7" path="res://Playgrounds/2DPlayground/scene/test_entry/falling_pills.tscn" id="5_tvuah"]
 [ext_resource type="PackedScene" uid="uid://xhpjmtyixhy5" path="res://Playgrounds/2DPlayground/scene/test_entry/particles.tscn" id="7_e13so"]
 [ext_resource type="PackedScene" uid="uid://bkie4leurj2qr" path="res://Playgrounds/2DPlayground/scene/test_entry/projet_dnap.tscn" id="8_7381o"]
+[ext_resource type="PackedScene" uid="uid://dg76bn5ymatx0" path="res://Playgrounds/2DPlayground/scene/test_entry/discord_player.tscn" id="9_slnao"]
+[ext_resource type="PackedScene" uid="uid://baxq5wvw2r3x1" path="res://Playgrounds/2DPlayground/scene/test_entry/viewport_texture.tscn" id="10_2rpft"]
 
 [sub_resource type="Resource" id="Resource_gnmlr"]
 script = ExtResource("3_hfb3m")
@@ -34,6 +36,16 @@ metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
 [sub_resource type="Resource" id="Resource_slnao"]
 script = ExtResource("3_hfb3m")
 scene = ExtResource("8_7381o")
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
+[sub_resource type="Resource" id="Resource_2rpft"]
+script = ExtResource("3_hfb3m")
+scene = ExtResource("9_slnao")
+metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
+
+[sub_resource type="Resource" id="Resource_4kooo"]
+script = ExtResource("3_hfb3m")
+scene = ExtResource("10_2rpft")
 metadata/_custom_type_script = "uid://ia2mtyp2q8ey"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_13o7v"]
@@ -64,7 +76,7 @@ height = 5000
 [node name="2DPlayground" type="Node2D" unique_id=1949748655]
 script = ExtResource("1_xu817")
 hud_scene = ExtResource("2_55x3e")
-test_scenes = Array[ExtResource("3_hfb3m")]([SubResource("Resource_gnmlr"), SubResource("Resource_e13so"), SubResource("Resource_tvuah"), SubResource("Resource_7381o"), SubResource("Resource_slnao")])
+test_scenes = Array[ExtResource("3_hfb3m")]([SubResource("Resource_gnmlr"), SubResource("Resource_e13so"), SubResource("Resource_tvuah"), SubResource("Resource_7381o"), SubResource("Resource_slnao"), SubResource("Resource_2rpft"), SubResource("Resource_4kooo")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=82877508]
 position_smoothing_enabled = true

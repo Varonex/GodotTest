@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://detg17nlvwdr8"]
+
+[ext_resource type="Script" uid="uid://dfsk2i7vpq7iw" path="res://Lifecycle/printer.gd" id="1_w67tm"]
+[ext_resource type="Script" uid="uid://e21u1lwlipcl" path="res://Lifecycle/node_mover.gd" id="2_cu5j7"]
+[ext_resource type="Script" uid="uid://4onsi3q6gwu7" path="res://Lifecycle/node_deleter.gd" id="3_lv6l7"]
+
+[node name="1" type="Node" unique_id=2020789308]
+script = ExtResource("1_w67tm")
+
+[node name="2" type="Node" parent="." unique_id=371344665]
+script = ExtResource("1_w67tm")
+
+[node name="3" type="Node" parent="2" unique_id=2088888911]
+script = ExtResource("1_w67tm")
+
+[node name="4" type="Node" parent="2" unique_id=1654212889]
+script = ExtResource("1_w67tm")
+
+[node name="5" type="Node" parent="2/4" unique_id=501292345]
+script = ExtResource("1_w67tm")
+
+[node name="6" type="Node" parent="2/4" unique_id=2130383396]
+script = ExtResource("1_w67tm")
+
+[node name="7" type="Node" parent="2" unique_id=1988947995]
+script = ExtResource("1_w67tm")
+
+[node name="Mover" type="Node" parent="2/7" unique_id=393426351 node_paths=PackedStringArray("target_container")]
+script = ExtResource("2_cu5j7")
+target_container = NodePath("../../4/6")
+wait_time = 5.0
+
+[node name="8" type="Node" parent="2/7" unique_id=813752294]
+script = ExtResource("1_w67tm")
+
+[node name="9" type="Node" parent="2/7/8" unique_id=1349247810]
+script = ExtResource("1_w67tm")
+
+[node name="10" type="Node" parent="2/7" unique_id=377925708]
+script = ExtResource("1_w67tm")
+
+[node name="Deleter" type="Node" parent="." unique_id=1129659022]
+script = ExtResource("3_lv6l7")
+wait_time = 10.0
